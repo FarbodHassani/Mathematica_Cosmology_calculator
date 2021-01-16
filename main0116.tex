@@ -53,7 +53,7 @@
 \usepackage{color}
 \usepackage{mhequ}
 \usepackage{dsfont}
-\usepackage[scanall]{psfrag}
+%\usepackage[scanall]{psfrag}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{color}
 \usepackage{url}
@@ -263,13 +263,17 @@
 \title{...}
 \author[1,2]{...}
 \author[2]{...}
+
+
 \affil[1]{D\'epartement de Physique Th\'eorique and Section de
   Math\'ematiques, University of Geneva, Switzerland}
 %  , $^*$corresponding author
 %, jean-pierre.eckmann@unige.ch}
 \affil[2]{D\'epartement de Physique Th\'eorique, University of Geneva, Switzerland}
 \maketitle
+\JP{made from source file \jobname}
 
+\JP{ missing citations are always $\backslash$cite\{xxx\}}
 
 \abstract{ In this paper we are going to study the blowup phenomena
   numerically in 1+1 dimensions. We obtain the ordinary differential
@@ -282,7 +286,7 @@
   similar non-linear systems appearing in the EFT language. In
   particular, extending the results of \cite{xxx,xxx}, we exhibit that, depending on the speed of sound
   $c_s$, and the equation of state $w$, the equations can diverge in
-  finite time. This limits the set of feasable parameters in the class
+  finite time. This limits the set of feasible parameters in the class
   of models we consider. 
   
 } 
@@ -290,10 +294,11 @@
 
 
  \section{Introduction}
- Effective field theories which combine cosmological fields with
+ Effective field theories (EFT) which combine cosmological fields with
 gravitation are conveniently described by non-linear partial
-differential equations. Extensive numerical simulations with
-g-evolution and xxx have shown that the solutions of
+differential equations. Extensive numerical simulations of EFT
+versions of \JP{of or with?}
+g-evolution and k-essence \cite{xxx} have shown that the solutions of
 such equations can form violent singularities at \emph{finite} time,
 at a red-shift which happens before the current epoch of the universe.
 Obviously, such a theory should be rejected.
@@ -301,17 +306,18 @@ Obviously, such a theory should be rejected.
 In the paper \citep{xxx}, it was shown that the main cause of such
 finite-time divergence is to be found in the equation
 \begin{equ}\label{eq:pidd}
-  \ddot \pi =c\cdot (\pi')^2~,
+  \ddot \pi =\beta\cdot (\pi')^2~,
 \end{equ}
-where $c$ is some physical constant. In particular, if
-$\pi$ is of the form $\pi(t,x)=c\cdot  a(t)x^2$ then this leads to $a''(t)=4 c \cdot a'(t)^2$,
+where $\beta$ is some physical constant. In particular, if
+$\pi$ is of the form $\pi(t,x)=\beta\cdot  \alpha(t)x^2$ then this
+leads to $\alpha ''(t)=4 \beta  \cdot \alpha '(t)^2$,
 whose general solution is
 \begin{equ}\label{eq:aaprime}
-  a'(t)=\frac{1}{t_0-4ct}~,
+  \alpha '(t)=\frac{1}{t_0-4\beta t}~,
 \end{equ}
-when $a'(0)=1/t_0$. Clearly, such solutions diverge at
-$t=\frac{t_0}{4c}$
-when $c>0$. While this naive example illustrates the main
+when $\alpha '(0)=1/t_0$. Clearly, such solutions diverge at
+$t=\frac{t_0}{4\beta }$
+when $\beta >0$. While this naive example illustrates the main
 mechanism of divergence (in $1+1$ dimensions) it seems that this is at
 the source of the divergences in $1+3$ dimensions observed in
 \citep{xxx}.
@@ -346,14 +352,14 @@ Here, $\bm \HH(\tau)$ is the physical time, expressed in terms of the
 conformal time $\tau $, $c_s$ is the speed of sound and $w$ describes
 the equation of state.
 The fields $\Psi$ and $\Phi$ describe the Bardeen potential, but,
-later on, we will set $\Phi=\Psi$, because \JP{xxx}.
+later on, we will set $\Phi=\Psi$, as explained in \cite{xxx}.
 Such equations appear in the literature \cite{xxx} we now ask
 whether the phenomenon of \eref{eq:aaprime} survives the addition of
 the many non-linear terms to the term  $- \frac{\bm \HH (\tau)}{2}
 \big(5c_s^2  + 3w  -2\big) \; {(\partial_x \pi(x,\tau))^2}$ which we
 identified as the cause of divergence in \eref{eq:pidd} and \eref{eq:aaprime}.
 
-While the technology for a general discussion of nonlinear PDEs is
+While the technology for a general discussion of non-linear PDEs is
 just not available, we will check in this paper that, indeed,
 divergence \emph{will} appear at finite time, basically in the $w$,
 $c_s^2$ region defined approximately by $w\ge (1-3c_s^2)/(1+c_s^2)$.
@@ -416,10 +422,10 @@ and the linear terms $ \LL (\pi, \dot \pi, \pi'', \Psi)$ read as,
 In this subsection we discuss some of the terms appearing in  \eref{full_equation}, namely $\bm \HH(\tau), \bm \HH'(\tau)$ and $\Psi(\tau,x), \Psi'(\tau,x)$. 
 To keep the discussion clear, we express, whenever possible, all
 time-dependent quantities as functions of the conformal time $\tau
-$. The well-known relations with the redshift $z$ are explained in
+$. The well-known relations with the red-shift $z$ are explained in
 \aref{sec:timescales}, but keep in mind that this relation depends on
 $w$, and we will take this into account. We also express $\bm \HH$ as a function of the
-logarithmic derivative $\bm a$. \JP{Is there a name for $a$ in the literature?}
+logarithmic derivative $\bm a$ (the scale factor).
 Looking at \aref{sec:timescales} \eref{eq:t}, we immediately deduce
 that $\bm H'(\tau)$ can be computed from the knowledge of $\bm a$.
 
@@ -446,8 +452,8 @@ measuring time in Giga light years leads to
 
 It is important to note that our parameter is the conformal time
 $\tau$, however we want to set the initial and final condition based
-on another parameter called redshift and it is defined as  $\bm
-z(\tau) \equiv 1/\atau -1$ and the conformal time for a given redshift is
+on another parameter called red-shift and it is defined as  $\bm
+z(\tau) \equiv 1/\atau -1$ and the conformal time for a given red-shift is
 \begin{equ}\label{tau_equ}
 \bm\tau(z) =\HH_{0}^{-1} \int_{z}^{\infty} \frac{\d y}{\sqrt{  (1+y)^{3 (1+w)}\Ode+ (1+y)^{3}\Om+ (1+y)^{4}\Or}}~.
 \end{equ}
@@ -467,7 +473,7 @@ choose $z = 0$ corresponding to the present time,
 %  need it because of the appendix.}
 
 While our calculation are all done in terms of the conformal time
-$\tau $, it is common to deteremine epochs in terms of the redshift $z$.
+$\tau $, it is common to determine epochs in terms of the red-shift $z$.
 The relation between the two variables is given by the Friedmann
 equations as follows (see \aref{sec:timescales} for details):
 The functions $z\mapsto \bm\tau(z)$ and $\tau\mapsto \bm z(\tau)$ are
@@ -478,13 +484,13 @@ $\bm a$ defined by the Friedman equations:
      ^{1-3w}\,\Ode+ \atau\,\Om +\Or}~,
 \end{equ}
 with
-\begin{equ}\label{eq:adef}
+\begin{equ}
   \bm z (x)=\frac{1}{\bm a(x)}-1~.
 \end{equ}
 
 The
-advantage of using redshift is that  we can control the initial
-redshift  $z_{\rm i}$ and final redshift $z_{\,\rm f}$. Because we
+advantage of using red-shift is that  we can control the initial
+red-shift  $z_{\rm i}$ and final red-shift $z_{\,\rm f}$. Because we
 want to start our simulation in matter dominated epoch $z_{\rm i}\sim1000$
 while it continues to today $z_{\,\rm f} = 0$. For
 different dark energy models (different $w$) $\tau_{\rm i}$ and
@@ -497,7 +503,7 @@ To find $\Psi$ and $\Psi'$ we define a new variable $N = \ln a$ to simplify the 
 \be 
  \HH ^2 = \HH_0^2  \Big(  \Ode  e^{-(1 + 3 w)N }+ \Om  e^{-N} + \Or  e^{-2N}  \Big)
 \ee 
-Here for simplicity we neglect radiation contribution which is consistent with the fact that we take the initial redshift in the matter dominated era,  therefore
+Here for simplicity we neglect radiation contribution which is consistent with the fact that we take the initial red-shift in the matter dominated era,  therefore
 \be
 \partial_N \ln\HH  = \frac{\partial_N \left(\HH ^2\right)}{2 \HH ^2} = -\frac{\Om  + \left(1 + 3 w\right) \Ode  e^{-3 w N}}{2 \Om  + 2 \Ode  e^{-3 w N}}\,.
 \ee
@@ -507,7 +513,7 @@ If we neglect gravitational back-reaction from dark energy and assume that $\Psi
 \be 
  \partial_N^2 \Psi + \left(3 + \partial_N \ln \HH \right) \partial_N \Psi + \left(2 - \frac{3\Om }{2\Om  + 2 \Ode  e^{-3 w N}} + \partial_N \ln\HH \right) \Psi = 0\,.
 \ee 
-We assume $\Psi (N_i) =  k$ and $\frac{\partial{\Psi}}{dN}(N_i)= 0$.
+We assume $\Psi (N_i) =  k$ and $\frac{\partial{\Psi}}{DNA}(N_i)= 0$.
 
 
 
@@ -544,7 +550,7 @@ In a general EFT framework the non-linear function in \eref{non_linear_terms}  c
 \end{equa}
 where each coefficient reads (some do not depend on $\tau$);
 \begin{equa}[eq:nu]
-\nu_{\pi'^2} (\tau) &= -\frac{\bm \HH(\tau)}{2} (5 c_s^2 + 3w -2) ~,\\
+\nu_{\pi'^2} (\tau) &= -\frac{\bm \HH(\tau)}{2} (5 c_s^2 + 3w -2)= -\frac{\bm \HH(\tau)}{2} \big(5( c_s^2-1) + 3(1+w)\big)~,\\
  \nu_{\pi' \dot \pi'} &= 2 (1- c_s^2) ~,\\
  \nu_{\pi \pi''} (\tau) &= -\bm \HH(\tau)\Big[(c_s^2-1) + 3c_s^2 (1+w)\Big] ~,\\
 \nu_{\dot \pi \pi''}   &= - (c_s^2 -1)~,\\
@@ -553,7 +559,7 @@ where each coefficient reads (some do not depend on $\tau$);
 \nu_{\pi'^2 \pi''}  &= \frac{3}2 (c_s^2 -1)~.
 \end{equa}
 Note that the terms $(1-c_s^2)$ and $(1+w)$ are the two important
-parameters that control the evolution of the scalar field. The speed
+parameters that control the non-linear part in the evolution of the scalar field. The speed
 of sound squared $c_s^2$ and the equation of state $w$ can take the values;
 \begin{equa}
  -1.5 \leq w \leq -0.5 ~,\qquad 
@@ -593,7 +599,7 @@ equations one obtains in this way are displayed in \aref{sec:full}.
 \section{Conclusions}
 
 
-\section*{Acknowledgements}
+\section*{Acknowledgments}
 %We thank Martin Kunz for asking questions leading to this paper, and
 %for helpful discussions. We thank Ruth Durrer and Jacques Rougemont
 %for helpful comments about our manuscript. JPE acknowledges partial support
@@ -665,6 +671,7 @@ As we will also need a handle on $\bm \HH'$, we write it as
     \HH}(\tau)^2~.
 \end{equ}
 From the equation for $\bm a'$ we get
+\JP{check \eref{eq:hprime}}
 \begin{equa}[eq:hprime]
  \bm \HH'(\tau)=&
   -\frac{\HH_0^2}{4}\Bigl((4\atau +3w-1)\atau^{-(2+3w)}\Ode\\
@@ -696,14 +703,14 @@ From the equation for $\bm a'$ we get
 \def\mytau{}
 
 Here, we write the equations for the coefficients of the powers of
-$x$. The same equations are found in the mathematica notebook.
+$x$. The same equations are found in the Mathematica notebook.
 All functions $u_0, u_1, \dots$ as well as all coefficients $\ell_{x}$
 and $\nu_x$ depend in principle on $\tau$. However, for the model we
-discuss here in detail, some of the coefficents only depend on $c_s^2$
+discuss here in detail, some of the coefficients only depend on $c_s^2$
 and on $w$, see \eref{eq:ell} and \eref{eq:nu}.
 
 
-\JP{I changed by hand $\nu_{\pi pp} $ to $\nu_{\pi p\pi p}$}
+
 
 \JP{if we really keep this, we have to re-align}
 
