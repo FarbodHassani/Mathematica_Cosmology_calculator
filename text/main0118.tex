@@ -1,0 +1,777 @@
+\documentclass[12pt,a4paper]{article}
+%\usepackage[allfiguresdraft]{draftfigure}
+%\newcommand{\pdfextension}{pdf}
+%\newcommand{\pngextension}{png}
+\usepackage{cite}
+%\usepackage{natbib}
+\usepackage{breakcites}
+\usepackage[normalem]{ulem}
+\usepackage{comment}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\let\rho=\varrho
+\def\fref#1{Fig.~\ref{#1}}
+\def\tabref#1{Table~\ref{#1}}
+\def\cref#1{Condition~\ref{#1}}
+\def\Cref#1{Corollary~\ref{#1}}
+\def\eref#1{(\ref{#1})}
+\def\sref#1{Section \ref{#1}}
+\def\aref#1{Appendix \ref{#1}}
+\def\lref#1{Lemma~\ref{#1}}
+\def\rref#1{Remark~\ref{#1}}
+\def\tref#1{Theorem~\ref{#1}}
+\def\dref#1{Definition~\ref{#1}}
+\def\pref#1{Proposition~\ref{#1}}
+\def\qref#1{Subsection~\ref{#1}}
+
+\def\dref#1{Definition~\ref{#1}}
+\def\myundefined#1{\special{ps: 1 0 0 setrgbcolor}{what is #1?}%
+	\special{ps: 0 0 0 setrgbcolor}}
+\newenvironment{myitem}
+{\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{itemize}}
+
+\newenvironment{myenum}
+{\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{enumerate}}
+
+%\usepackage{sub_JP}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+%\usepackage{makeidx}
+\usepackage{times}
+\usepackage{amsthm}
+\usepackage{ amssymb }
+\usepackage{color}
+\usepackage{mhequ}
+\usepackage{dsfont}
+%\usepackage[scanall]{psfrag}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{color}
+\usepackage{url}
+\usepackage{lipsum}
+%\usepackage{authblk}
+\usepackage{subfig}
+\usepackage{mhequ}
+
+\usepackage{tikz}
+\usepackage[graphics, active, tightpage]{}
+
+
+
+%\usepackage[expansion=true]{microtype}
+
+%\captionsetup[figure]{margin=2cm,font=footnotesize,labelfont=bf,labelsep=endash,textfont=rm}\captionsetup[subfigure]{margin=0pt}
+
+
+%\begin{equa}
+% \dot\phi(t) &\sim -2\gamma \epsilon ^{2n-1}~,\\
+% t\dot\phi(t)+\dot \theta(t) &\sim 0~,\\
+%   \norm{z(t)}&\text{ remains bounded by }\OO(\epsilon ^n)~.
+%\end{equa}
+%
+%
+%
+%this will make a label , vertically centered
+%you can also say \begin{equa}\\label{eq:main_real}
+%
+%\begin{equa}[eq:main_real]
+% \dot q_j &= -\epsilon (\Delta p)_j
+% -p_j+(q_j^2+p_j^2)p_j-\delta_ {j,n}\gamma\epsilon q_n~,\\
+% \dot p_j &= \hphantom{-}\epsilon (\Delta q)_j +q_j-(q_j^2+p_j^2)q_j-\delta_
+%{j,n}\gamma\epsilon p_n~~.
+%\end{equa}
+
+
+\def\thecomma{\ifx,\thenewxt \else\ifx;\thenext \else\ifx.\thenext
+	\else\ifx!\thenext \else\ifx:\thenext\else\ifx)\thenext \else \
+	\fi\fi\fi\fi\fi\fi}
+\def\condblank{\futurelet\thenext\thecomma}
+\def\ie{{\it i.e.,}\condblank}
+\def\eg{{\it e.g.,}\condblank}
+
+\numberwithin{equation}{section}
+
+
+
+\newtheorem*{oneshot}{Hypothesis~\ref{h:assumption}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{property}[theorem]{Property}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition} %remarks in rm
+\newtheorem{remark}[theorem]{Remark}
+
+%\bibliographystyle{JPE}
+%\usepackage{cite}
+
+\usepackage{stmaryrd}
+\def\scomm#1#2{\ensuremath{\bigr\llbracket #1:#2\bigr\rrbracket}}
+
+\newcommand{\meq}[1]{\ensuremath{\stackrel{\scriptscriptstyle#1}{\scriptstyle
+			\sim}}}
+
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\dt}{\,\dd t}
+\newcommand{\mpart}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\avg}[1]{\left\langle #1\right\rangle}
+
+\newcommand{\bigoh}[1]{\hat {\mathcal O}(p_2^{#1})}
+\newcommand{\bigohneg}[1]{\hat {\mathcal O}\!\left({p_2^{-#1}}\right)}
+
+\newcommand{\jp }[1]{{\color{magenta}jp*****:  #1}}
+\newcommand{\noe }[1]{{\color{red}noe:  #1}}
+\newcommand{\christophe }[1]{{\color{red}christophe: #1}}
+\def\argcdot{{\,\cdot\,}}
+
+
+\newcommand{\cA}{{\ensuremath{\mathcal A}} }
+\newcommand{\cF}{{\ensuremath{\mathcal F}} }
+\newcommand{\cP}{{\ensuremath{\mathcal P}} }
+\newcommand{\cE}{{\ensuremath{\mathcal E}} }
+\newcommand{\cH}{{\ensuremath{\mathcal H}} }
+\newcommand{\cC}{{\ensuremath{\mathcal C}} }
+\newcommand{\cN}{{\ensuremath{\mathcal N}} }
+\newcommand{\cL}{{\ensuremath{\mathcal L}} }
+\newcommand{\cT}{{\ensuremath{\mathcal T}} }
+\newcommand{\cD}{{\ensuremath{\mathcal D}} }
+\newcommand{\cU}{{\ensuremath{\mathcal U}} }
+\newcommand{\cV}{{\ensuremath{\mathcal V}} }
+\newcommand{\cS}{{\ensuremath{\mathcal S}} }
+\newcommand{\cY}{{\ensuremath{\mathcal Y}} }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Blackboard bolds
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\bbA}{{\ensuremath{\mathbb A}} }
+\newcommand{\bbB}{{\ensuremath{\mathbb B}} }
+\newcommand{\bbC}{{\ensuremath{\mathbb C}} }
+\newcommand{\bbD}{{\ensuremath{\mathbb D}} }
+\newcommand{\bbE}{{\ensuremath{\mathbb E}} }
+\newcommand{\bbF}{{\ensuremath{\mathbb F}} }
+\newcommand{\bbG}{{\ensuremath{\mathbb G}} }
+\newcommand{\bbH}{{\ensuremath{\mathbb H}} }
+\newcommand{\bbI}{{\ensuremath{\mathbb I}} }
+\newcommand{\bbJ}{{\ensuremath{\mathbb J}} }
+\newcommand{\bbK}{{\ensuremath{\mathbb K}} }
+\newcommand{\bbL}{{\ensuremath{\mathbb L}} }
+\newcommand{\bbM}{{\ensuremath{\mathbb M}} }
+\newcommand{\bbN}{{\ensuremath{\mathbb N}} }
+\newcommand{\bbO}{{\ensuremath{\mathbb O}} }
+\newcommand{\bbP}{{\ensuremath{\mathbb P}} }
+\newcommand{\bbQ}{{\ensuremath{\mathbb Q}} }
+\newcommand{\bbR}{{\ensuremath{\mathbb R}} }
+\newcommand{\bbS}{{\ensuremath{\mathbb S}} }
+\newcommand{\bbT}{{\ensuremath{\mathbb T}} }
+\newcommand{\bbU}{{\ensuremath{\mathbb U}} }
+\newcommand{\bbV}{{\ensuremath{\mathbb V}} }
+\newcommand{\bbW}{{\ensuremath{\mathbb W}} }
+\newcommand{\bbX}{{\ensuremath{\mathbb X}} }
+\newcommand{\bbY}{{\ensuremath{\mathbb Y}} }
+\newcommand{\bbZ}{{\ensuremath{\mathbb Z}} }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Greek letters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gga}{\gamma}            % \gg already exists...
+\newcommand{\gd}{\delta}
+\newcommand{\gep}{\varepsilon}       % \ge already exists...
+\newcommand{\gp}{\varphi}
+\newcommand{\gr}{\rho}
+\newcommand{\gvr}{\varrho}
+\newcommand{\gz}{\zeta}
+\newcommand{\gG}{\Gamma}
+\newcommand{\gP}{\Phi}
+\newcommand{\gD}{\Delta}
+\newcommand{\gk}{\kappa}
+\newcommand{\go}{\omega}
+\newcommand{\gto}{{\tilde\omega}}
+\newcommand{\gO}{\Omega}
+\newcommand{\gl}{\lambda}
+\newcommand{\gL}{\Lambda}
+\newcommand{\gs}{\sigma}
+\newcommand{\gS}{\Sigma}
+\newcommand{\gt}{\vartheta}
+\let\kappa=\varkappa
+\let\phi=\varphi
+\def\CC{{\mathcal C}}
+\def\Rsch{r_{\rm sch}}
+\def\d{{\rm d}} 
+\def\KK{{\mathcal K}}
+\def\OO{{\mathcal O}}
+\def\integer{{\mathbb Z}}
+\def\real{{\mathbb R}}
+\newcommand{\ind}{\mathbf{1}}
+\def\p2t2{{\tilde p_2^{\,2}}}
+
+\def\fhc#1{\textcolor{violet}{#1}}
+\definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
+\newcommand{\fhn}[1]{{\textcolor{bittersweet}{\sf[#1]}}}
+\newcommand{\de}[1]{\text{DE}}
+
+\newcommand{\edit}[2] {\textcolor{black}{\sout{#1}} {\textcolor{violet}{#2}} }
+\def\JP#1{\textcolor{blue}{JPE:#1}}
+\let\epsilon=\varepsilon
+\usepackage{authblk}
+
+%%%%%%%
+%% Farbod Hassani
+%%%%%%%
+\def\be{\begin{equ}}
+\def\ee{\end{equ}}
+\def\ww{,w}
+\def\ww{}
+
+\def\citep#1{\cite{#1}}
+%%%%%% the omegas
+\def\Ode{\Omega_{\rm DE}}
+\def\Om{\Omega_{\rm M}}
+\def\Or{\Omega_{\rm R}}
+
+\newcommand{\HH}{\mathcal {H}}
+\newcommand{\NN}{\mathcal {N}}
+\newcommand{\LL}{\mathcal {L}}
+\def\atau{\bm a(\tau )}
+\usepackage{bm}
+
+\begin{document}
+
+\title{...}
+\author[1,2]{...}
+\author[2]{...}
+
+
+\affil[1]{D\'epartement de Physique Th\'eorique and Section de
+  Math\'ematiques, University of Geneva, Switzerland}
+%  , $^*$corresponding author
+%, jean-pierre.eckmann@unige.ch}
+\affil[2]{D\'epartement de Physique Th\'eorique, University of Geneva, Switzerland}
+\maketitle
+\JP{made from source file \jobname}
+
+\JP{ missing citations are always $\backslash$cite\{xxx\}}
+
+\abstract{ In this paper we study the blowup phenomena in cosmological models,
+  especially in 1+1 dimensions. We obtain ordinary differential
+  equations for the evolution of the dark energy scalar field shape
+  (considered in the form $a x + bx^2 + c x^3+\dots$ ) derived from
+  the partial differential equation for the $k$-essence dark energy
+  model. Then we solve this system in a cosmological scheme and comment
+  on the evolution of the system for different choices of
+  parameters. This analysis is especially important for studying of
+  similar non-linear systems appearing in the EFT language. In
+  particular, extending the results of \cite{xxx,xxx}, we exhibit
+  that, depending on the speed of sound 
+  $c_s$, and the equation of state $w$, the equations can diverge in
+  finite time. This limits the set of feasible parameters in the class
+  of models we consider. 
+  
+} 
+  
+
+
+ \section{Introduction}
+ Effective field theories (EFT) are employed to describe different fundamental theories at low energy limit in a unified form (Ref XXX). For the cosmological applications we use the EFT language for the dark energy scalar field in the weak field regime. In this framework the dark energy field and 
+gravity part are coupled and are conveniently described by non-linear partial
+differential equations. Extensive numerical simulations of EFT of dark energy are done using $k$-evolution $N$-body code which is developed based on gevolution (a general relativistic $N$-body code) \cite{xxx}. In $k$-evolution the whole framework and the PDEs are discussed, and in XXX have shown that the solutions of
+such equations can form violent singularities at \emph{finite} time,
+at a redshift which happens before the current epoch of the universe.
+Obviously such a theory should be rejected in the EFT framework.
+
+In the paper \citep{xxx}, it was shown that the main cause of such
+finite-time divergence is to be found in the equation
+\begin{equ}\label{eq:pidd}
+  \ddot \pi =\beta\cdot (\pi')^2~,
+\end{equ}
+where $\beta$ is some physical constant. In particular, if
+$\pi$ is of the form $\pi(t,x)=\beta\cdot  \alpha(t)x^2$ then this
+leads to $\alpha ''(t)=4 \beta  \cdot \alpha '(t)^2$,
+whose general solution is
+\begin{equ}\label{eq:aaprime}
+  \alpha '(t)=\frac{1}{t_0-4\beta t}~,
+\end{equ}
+when $\alpha '(0)=1/t_0$. Clearly, such solutions diverge at
+$t=\frac{t_0}{4\beta }$
+when $\beta >0$. While this naive example illustrates the main
+mechanism of divergence (in $1+1$ dimensions) it seems that this is at
+the source of the divergences in $1+3$ dimensions observed in
+\citep{xxx}.
+
+Of course \eref{eq:aaprime} is only a poor caricature of the equations
+used in cosmological calculations, which have many more terms, such as
+\begin{equa}\label{eq:full}
+& \ddot{\pi}(x,\tau) +  \LL (\pi, \dot \pi, \pi'', \Psi)  =  \NN (\pi,  	\dot \pi,   \pi',    \dot \pi',  \pi'', \Psi, \Psi') \,, 
+\end{equa}
+with the linear part given by 
+\begin{equa}[eq:linear]
+ \LL (\pi, \dot \pi, \pi'', \Psi)  & =  \bm \HH(\tau) (1-3w) \partial_{\tau}\pi(x,\tau)\nonumber\\&  + \Big( \partial_{\tau} \bm \HH(\tau) - 3w \bm \HH(\tau)^2 + 3 c_{s}^{2} (\bm \HH (\tau)^{2} - \partial_{\tau} \bm \HH(\tau))  \Big)  \pi(x,\tau)   \nonumber \\ & 
+-  \partial_{\tau}\Psi(x,\tau) +3\bm \HH(\tau) (w- c_s^2) \Psi(x,\tau) - 3 c_{s}^{2} \partial_{\tau}\Phi(x,\tau)-c_{s}^{2}  \partial_{x}^2\pi (x,\tau)~, 
+\end{equa}
+and the non-linear one by
+\begin{equa}[eq:nonlinear]
+&  \NN (\pi,  	\partial_\tau \pi,  \partial_x \pi,  \partial_x\partial_{\tau}  \pi,\partial_x^2 \pi) 
+ =    - \frac{\bm \HH (\tau)}{2}  \big(5c_s^2  + 3w  -2\big) \; {(\partial_x \pi(x,\tau))^2}\\
+ 	&+ 2(1- c_s^2)  \partial_x \pi(x,\tau) \partial_x\partial_{\tau}  \pi(x,\tau)
+	 	  \\ &
+	 - \Big[ (c_s^2-1) \big( \partial_{\tau}  \pi(x,\tau) + {\bm\HH}(\tau) \pi(x,\tau) -\Psi(x,\tau) \big)
+		 + c_s^2 (\Phi(x,\tau) - \Psi(x,\tau)) 
+	 \\ &
+	+ 3 {\bm \HH}(\tau) c_s^2 (1+w)\pi(x,\tau)  \Big] \partial_x^2 \pi (x,\tau)
+	 + (2 c_s^2 -1)  \partial_x \Psi(x,\tau)  \partial_x \pi(x,\tau)   	  
+	 \\ &
+ - c_s^2 \partial_x \Phi(x,\tau)  \partial_x \pi(x,\tau) 
+ +\frac{3(c_s^2 -1) }{2}  (\partial_x \pi(x,\tau))^2 \partial_x^2 \pi(x,\tau)~.
+% 
+\end{equa}
+Here, $\bm \HH(\tau)$ is the physical time, expressed in terms of the
+conformal time $\tau $, $c_s$ is the speed of sound and $w$ describes
+the equation of state.
+The fields $\Psi$ and $\Phi$ describe the Bardeen potential, but,
+later on, we will set $\Phi=\Psi$, as explained in \cite{xxx}.
+Such equations appear in the literature \cite{xxx} we now ask
+whether the phenomenon of \eref{eq:aaprime} survives the addition of
+the many non-linear terms to the term  $- \frac{\bm \HH (\tau)}{2}
+\big(5c_s^2  + 3w  -2\big) \; {(\partial_x \pi(x,\tau))^2}$ which we
+identified as the cause of divergence in \eref{eq:pidd} and \eref{eq:aaprime}.
+
+While the technology for a general discussion of non-linear PDEs is
+just not available, we will check in this paper that, indeed,
+divergence \emph{will} appear at finite time, basically in the $w$,
+$c_s^2$ region defined approximately by $w\ge (1-3c_s^2)/(1+c_s^2)$.
+The reason for this stability is that the ``strength'' of these
+additional terms (as we will show below) is weaker than the force
+which leads to divergence. Unfortunately, this is not a mathematical
+statement: The reason is that, while each term in itself can be
+bounded, the theory of non-linear PDEs does not allow any conclusion
+about the back-reaction this can have on the coupled equation.
+
+In order to do this, we developed a Mathematica notebook for the model
+described above. This allows, see below, to study the properties of the
+model for initial densities $\rho$ of the xxx. But users can also
+easily modify, if needed, the algorithm to other variants of the
+model, such as can be found in \citep{xxx,xxx}.
+
+Since the blowup of solutions is a local phenomenon, we expand the
+(local) solution in terms of powers of the space coordinate,
+$x$. Then, the system \eref{eq:full} decouples into a system of ODEs
+for the coefficients of the various powers of $x$, for the fields
+$\pi$ and $\Psi$.
+
+
+
+\section{The effective field theory of dark energy in 1+1 D}
+The full partial differential equation for the $k$-essence model as a
+viable dark energy candidate is obtained in the effective field theory
+framework in Eqs.~2.20 and 2.21 in \cite{Hassani:2019lmy}. According
+to \cite{Hassani:2019lmy}, this PDE in 3+1 dimensions for some choice of
+parameters is unstable and blows up in finite time. Writing the
+equations in a second order equation form and considering it in 1+1
+dimension results in the following second order partial differential
+equation:
+\begin{equa}
+ \ddot{\pi}(x,\tau) +  \LL (\pi, \dot \pi, \pi'', \Psi)  =  \NN (\pi,  	\dot \pi,   \pi',    \dot \pi',  \pi'', \Psi, \Psi') \,, \label{full_equation}
+\end{equa}
+
+\begin{equa}[non_linear_terms]
+&  \NN (\pi,  	\partial_\tau \pi,  \partial_x \pi,  \partial_x\partial_{\tau}  \pi,\partial_x^2 \pi) 
+ =    - \frac{\bm \HH (\tau)}{2}  \big(5c_s^2  + 3w  -2\big) \; {(\partial_x \pi(x,\tau))^2}\\
+ 	&+ 2(1- c_s^2)  \partial_x \pi(x,\tau) \partial_x\partial_{\tau}  \pi(x,\tau)
+	 	  \\ &
+	 - \Big[ (c_s^2-1) \big( \partial_{\tau}  \pi(x,\tau) + {\bm \HH}(\tau) \pi(x,\tau) -\Psi(x,\tau) \big)
+		 + c_s^2 (\Phi(x,\tau) - \Psi(x,\tau)) 
+	 \\ &
+	+ 3 \HH(\tau) c_s^2 (1+w)\pi(x,\tau)  \Big] \partial_x^2 \pi (x,\tau)
+	 + (2 c_s^2 -1)  \partial_x \Psi(x,\tau)  \partial_x \pi(x,\tau)   	  
+	 \\ &
+ - c_s^2 \partial_x \Phi(x,\tau)  \partial_x \pi(x,\tau) 
+ +\frac{3(c_s^2 -1) }{2}  (\partial_x \pi(x,\tau))^2 \partial_x^2 \pi(x,\tau)
+ \end{equa}
+and the linear terms $ \LL (\pi, \dot \pi, \pi'', \Psi)$ read as,
+\begin{equa}[Linear_terms]
+ \LL (\pi, \dot \pi, \pi'', \Psi)  & = + \bm \HH(\tau) (1-3w) \partial_{\tau}\pi(x,\tau)\\&  + \Big(  \bm \HH'(\tau) - 3w \bm \HH(\tau)^2 + 3 c_{s}^{2} (\bm \HH (\tau)^{2} - \bm \HH'(\tau))  \Big)  \pi(x,\tau)    \\ & 
+-  \partial_{\tau}\Psi(x,\tau) +3\bm \HH(\tau) (w- c_s^2) \Psi(x,\tau)\\& - 3 c_{s}^{2} \partial_{\tau}\Phi(x,\tau)-c_{s}^{2}  \partial_{x}^2\pi (x,\tau) \label{Linear_terms}
+\end{equa}
+\subsection{The background equations}
+
+
+In this subsection we discuss some of the terms appearing in  \eref{full_equation}, namely $\bm \HH(\tau), \bm \HH'(\tau)$ and $\Psi(\tau,x), \Psi'(\tau,x)$. 
+To keep the discussion clear, we express, whenever possible, all
+time-dependent quantities as functions of the conformal time $\tau
+$. The well-known relations with the redshift $z$ are explained in
+\aref{sec:timescales}, but keep in mind that this relation depends on
+$w$, and we will take this into account. We also express $\bm \HH$ as a function of the
+logarithmic derivative $\bm a$ (the scale factor).
+Looking at \aref{sec:timescales} \eref{eq:t}, we immediately deduce
+that $\bm H'(\tau)$ can be computed from the knowledge of $\bm a$.
+
+
+
+To find $\bm \HH(\tau), \bm \HH'(\tau)$ we use the Friedmann equations, 
+\be
+\bm \HH (\tau)^2 = \HH_0^2 \Big( \atau ^{-(1 + 3 w)}\Ode +  
+\, \atau ^{-1}\Om+  \atau ^{-2}\Or    \Big)~. \label{Friedmann_eq}
+\ee
+
+The cosmological values of the $\Omega$'s are given by
+$\Ode = 0.687$, $\Om  = 0.31$, and $\Or = 9 \times
+10^{-5}$. Although $\Or$ is quite small, we keep it in our programs,
+but the reader can easily set it to 0 in the Mathematica notebook.
+Moreover $\HH_0$ equals
+$67 \; \text{[Km/s/Mpc]}$ which in our code units, i.e., $c=1$ and
+measuring time in Giga light years leads to
+\begin{equa}\HH_0 &=\frac{ 67  }{299792.458 \; \text{ [Km/s]} \times
+    0.003261 \text{[Mpc to Giga year conversion]} }\\&= 0.0691023 \;
+  \text{ [Giga light-year]$^{-1}$}~.
+\end{equa}
+
+
+It is important to note that our parameter is the conformal time
+$\tau$, however we want to set the initial and final condition based
+on another parameter called redshift and it is defined as  $\bm
+z(\tau) \equiv 1/\atau -1$ and the conformal time for a given redshift is
+\begin{equ}\label{tau_equ}
+\bm\tau(z) =\HH_{0}^{-1} \int_{z}^{\infty} \frac{\d y}{\sqrt{  (1+y)^{3 (1+w)}\Ode+ (1+y)^{3}\Om+ (1+y)^{4}\Or}}~.
+\end{equ}
+
+So for example, for $\HH_0^{-1} = 14.4713$, when $w=-1$ and if we
+choose $z = 0$ corresponding to the present time,
+\begin{equa}
+\tau_{\,\rm f} &= 14.4713 \int_{z = 0}^{\infty} \frac{\d y}{\sqrt{  (1+y)^{3 (1+w)}\Ode+ (1+y)^{3}\Om+\ (1+y)^{4}\Or}}\\&= 46.3334 \; \text{[Giga-light year]}~.
+\end{equa}
+
+%Note that the  definition of $\bm\tau(z)$ in \eref{tau_equ} is consistent with the Friedmann equation \eref{Friedmann_eq} and the definition of the redshift as,
+%\be
+%\frac{\partial \bm \tau(z)}{\partial z} =  -\HH_0^{-1} \frac{1}{\sqrt{\Ode  (1+z)^{3 (1+w)}+\Om (1+z)^{3}+\Or (1+z)^{4}}}~.
+%\ee
+%%\JP{according to eckmann-rules, we cannot use the same symbol for
+%  $\HH$ as a function of $\tau$ or $z$. But I think we do not really
+%  need it because of the appendix.}
+
+While our calculation are all done in terms of the conformal time
+$\tau $, it is common to determine epochs in terms of the redshift $z$.
+The relation between the two variables is given by the Friedmann
+equations as follows (see \aref{sec:timescales} for details):
+The functions $z\mapsto \bm\tau(z)$ and $\tau\mapsto \bm z(\tau)$ are
+inverses of each other and are related through the \emph{scale factor}
+$\bm a$ defined by the Friedman equations:
+\begin{equ}
+  \bm a'(\tau )=\HH_0 \sqrt{ \atau
+     ^{1-3w}\,\Ode+ \atau\,\Om +\Or}~,
+\end{equ}
+with
+\begin{equ}
+  \bm z (x)=\frac{1}{\bm a(x)}-1~.
+\end{equ}
+
+The
+advantage of using redshift is that  we can control the initial
+redshift  $z_{\rm i}$ and final redshift $z_{\,\rm f}$. Because we
+want to start our simulation in matter dominated epoch $z_{\rm i}\sim1000$
+while it continues to today $z_{\,\rm f} = 0$. For
+different dark energy models (different $w$) $\tau_{\rm i}$ and
+  $\tau_{\,\rm f}$ vary with $w$, but we want to keep the more natural 
+$z_{\rm i}$ and $z_{\,\rm f}$ fixed.
+
+\subsection{The equation for the gravitational potential}
+Following the discussion of \cite{Bernardeau:2001qr}(Eq.~(22)) the linear growth factor for matter perturbation employing the Eulerian Linear Perturbation Theory reads,
+\be
+\frac{\mathrm{d}^{2} D_{1}(\tau)}{\mathrm{d} \tau^{2}}+\bm \HH (\tau) \frac{\mathrm{d} D_{1}(\tau)}{\mathrm{d} \tau}=\frac{3}{2} \Om\atau^{-3} \bm \HH ^{2}(\tau) D_{1}(\tau)~. \label{eq_growthfactor}
+\ee
+The growth factor for the gravitational potential $\Psi$ according to
+the Poisson equation in Fourier space is $ -k^2 \Psi \sim \delta_m/a $, so we need to solve the equation for $D_1(\tau)$ to find the time evolution of $\bm \Psi(\tau) \sim D_1(\tau)/\atau $.
+Equivalently we can also substitute $D_1(\tau) =\bm \Psi(\tau)  \atau $ in
+\eref{eq_growthfactor} and obtain a (linear in $\bm \Psi$)  ODE for the time evolution of
+$\bm \Psi$, which is
+\begin{equa}
+\bm \Psi''(\tau )+3\bm \HH(\tau )\bm \Psi'(\tau
+)+\big((2-3\Om\atau^{-3}/2)\bm \HH(\tau )^2 +\bm \HH'(\tau) \big)\bm \Psi(\tau )=0~.
+\end{equa}
+
+\JP{from your notebook, rearranged, please check}
+
+To solve this  ODE, we assume that at the initial time
+$\bm \Psi(\tau_{\,\rm i}) = k$ and $\bm \Psi'(\tau_{\,\rm i})=0$  where $k$ is a constant.
+This also implies that at the initial time $D_1(\tau) = k \atau$. As
+a result we can solve the second order ODE and find the solution of
+$\bm \Psi$ at every time $\tau$.
+\fhn{This equation should be checked! with the previous results.}
+%  \JP{next still incomplete}
+%
+%To find $\Psi$ and $\Psi'$ we define a new variable $N = \ln a$ to simplify the equations. The Friedmann equation \eref{Friedmann_eq} reads,
+%\be 
+% \bm \HH ^2 = \bm \HH_0^2  \Big(  \Ode  e^{-(1 + 3 w)N }+ \Om  e^{-N} + \Or  e^{-2N}  \Big)
+%\ee 
+%Here for simplicity we neglect radiation contribution which is consistent with the fact that we take the initial redshift in the matter dominated era,  therefore
+%\be
+%\partial_N \ln\bm \HH  = \frac{\partial_N \left(\bm \HH ^2\right)}{2 \bm \HH ^2} = -\frac{\Om  + \left(1 + 3 w\right) \Ode  e^{-3 w N}}{2 \Om  + 2 \Ode  e^{-3 w N}}\,.
+%\ee
+%
+%If we neglect gravitational back-reaction from dark energy and assume that $\Psi$ is generated by a linear matter perturbation, we can also write the time evolution equation for $\Psi$, \fhn{Reference and also do not  remove $\Omega_r$ from the previous equation.}
+%
+%\be 
+% \partial_N^2 \Psi + \left(3 + \partial_N \ln \bm \HH \right) \partial_N \Psi + \left(2 - \frac{3\Om }{2\Om  + 2 \Ode  e^{-3 w N}} + \partial_N \ln\bm \HH \right) \Psi = 0\,.
+%\ee 
+%We assume $\Psi (N_i) =  k$ and $\frac{\partial{\Psi}}{DNA}(N_i)= 0$.
+
+
+
+\section{The simplified equation}
+
+In  [Peter's papers]  we studied;
+\be
+\ddot{\pi}(x,\tau) = \pi'(x,\tau)^2\,,
+\ee
+where dot denotes the derivative with respect to time $\tau$ and prime denotes the spatial derivative. Here, in addition, we consider the other relevant linear and non-linear terms in our analysis 
+
+For  simplicity in our analysis we define the coefficients of \eref{Linear_terms} as:
+\begin{equa}
+ \LL (\pi, \dot \pi, \pi'', \Psi)  & = \ell_{\dot{\pi}} (\tau)  \dot{\pi}(x,\tau)  +  \ell_{{\pi}} (\tau) \pi(x,\tau)\\&+   \ell_{{\Psi}} (\tau) \Psi(x,\tau)  +  \ell_{{\dot\Psi}} (\tau) \dot\Psi(x,\tau)  +  \ell_{{\pi''}}(\tau)  \pi'' (x,\tau) ~,
+\end{equa}
+where we have (2 coefficients are independent of $\tau $): 
+\begin{equa}[eq:ell]
+\ell_{\dot{\pi}} (\tau)  &=  (1-3w) \bm \HH(\tau)~, \\ 
+ \ell_{{\pi}} (\tau)  &= (1-3c_s^2)  \bm \HH'(\tau) + 3
+ (c_s^2-w)  \bm \HH(\tau)^2 ~,\\
+ \ell_{{\Psi}} (\tau)  &= 3 (w- c_s^2) \bm\HH (\tau)~, \\
+  \ell_{{\dot\Psi}}   &= - (1+3 c_s^2)~,   \\
+ \ell_{{\pi''}}  &= -c_{s}^{2}~. \\
+\end{equa}
+
+In a general EFT framework the non-linear function in \eref{non_linear_terms}  can be a complicated function of many non-linear terms. However in the EFT of DE framework  for the $k$-essence theory only some non-linear terms appear in the equations:
+\begin{equa}
+  \NN (\pi,  	\dot \pi,   \pi',    \dot \pi',  \pi'') &
+  =  \nu_{\pi'^2} (\tau) \,  \pi'^2
+  +  \nu_{\pi' \dot \pi'} (\tau)  \, \pi' \dot \pi'
+  +  \nu_{\pi \pi''} (\tau) \, \pi \pi''
+  +   \nu_{\dot \pi \pi''} (\tau) \,\dot \pi \pi''   \\ & 
+ +  \nu_{ \Psi \pi''} (\tau) \, \Psi \pi'' +  \nu_{\Psi' \pi' } (\tau)\, \Psi' \pi' +  \nu_{\pi'^2 \pi''} (\tau) \, \pi'^2 \pi''.
+\end{equa}
+where each coefficient reads (some do not depend on $\tau$);
+\begin{equa}[eq:nu]
+\nu_{\pi'^2} (\tau) &= -\frac{\bm \HH(\tau)}{2} (5 c_s^2 + 3w -2)= -\frac{\bm \HH(\tau)}{2} \big(5( c_s^2-1) + 3(1+w)\big)~,\\
+ \nu_{\pi' \dot \pi'} &= 2 (1- c_s^2) ~,\\
+ \nu_{\pi \pi''} (\tau) &= -\bm \HH(\tau)\Big[(c_s^2-1) + 3c_s^2 (1+w)\Big] ~,\\
+\nu_{\dot \pi \pi''}   &= - (c_s^2 -1)~,\\
+\nu_{ \Psi \pi''}  &= (c_s^2 -1)~,\\
+\nu_{\Psi' \pi' }  &= (c_s^2 -1)~,\\
+\nu_{\pi'^2 \pi''}  &= \frac{3}2 (c_s^2 -1)~.
+\end{equa}
+Note that the terms $(1-c_s^2)$ and $(1+w)$ are the two important
+parameters that control the non-linear part in the evolution of the scalar field. The speed
+of sound squared $c_s^2$ and the equation of state $w$ can take the values;
+\begin{equa}
+ -1.5 \leq w \leq -0.5 ~,\qquad 
+ 0 \leq c_s^2 \leq 1~.
+\end{equa}
+
+
+The initial conditions for this PDE are set to 0 at the initial time as we want it to be generated by the gravitational potential at early times (here early means compared to the dark energy domination era). However we also vary the initial conditions for the scalar field a bit  in our analysis to see the impact of non-zero initial condition \fhn{To be done!}. 
+
+The
+gravitational potential is the main quantity which acts as the source for the scalar field $\pi$, we assume that $\Psi(x,\tau)$ is a polynomial at the initial time ($z\sim 1000$):
+\be
+\Psi(x) = \psi_0(\tau) + \psi_1(\tau)  x +  \psi_2(\tau)  x^2 +  \psi_3(\tau)  x^3 +  \psi_4(\tau)  x^4~.
+\ee
+In general, $\Psi$ is a stochastic field and has  peaks and troughs in space. A good approximation around the minima and maxima of $\Psi$ would be to consider 
+ $\Psi(x) = \psi_2(\tau)  x^2$ where the sign of $ \psi_2(\tau)$ shows
+whether it is a structure or void, a positive $ \psi_2(\tau)$ corresponding to a
+structure and a negative one to a void. Moreover in our analysis we
+took the speed of light $c =1$ and we measure the conformal time in
+giga years which implies that the distances are measured in giga
+light-years (the distance that light travels in one interval of
+time (here giga year)). According to our choice of units  conformal
+time $\tau$ varies from a small number, for example $\tau_{\rm i} = 0.01$
+to $\tau_{\,\rm f} = 47 $.
+Note that the exact values of $\tau_{\rm i}$ and $\tau_{\,\rm f}$ are
+found by fixing $z_{\rm i} =1000$ and $z_{\rm f}=0$ and finding the
+corresponding $\tau$ (which depends on $w$, see \eref{eq:tau}).
+To solve \eref{full_equation} we consider the following ansatz;
+\be 
+\pi(\tau,x) = u_0(\tau)+  u_1(\tau) x+   u_2(\tau) x^2 + u_3(\tau) x^3 + u_4(\tau) x^4 + ...\,.
+\ee
+We use this ansatz and keep all the terms up to $x^4$ in the equation to
+obtain ODEs out of the PDE for the evolution of each coefficient. The
+equations one obtains in this way are displayed in \aref{sec:full}.
+
+
+\section{Conclusions}
+
+
+\section*{Acknowledgments}
+%We thank Martin Kunz for asking questions leading to this paper, and
+%for helpful discussions. We thank Ruth Durrer and Jacques Rougemont
+%for helpful comments about our manuscript. JPE acknowledges partial support
+%by an ERC advanced grant ``Bridges'' and FH acknowledges financial support from the Swiss National Science Foundation.
+%
+
+
+\newpage
+\appendix 
+
+\section{Time scales}\label{sec:timescales}
+
+Let us assume $w$ is fixed. Therefore, we can write, $a(\tau
+,w)=a(\tau)$ but it is understood that all functions depend on $w$.
+Then there are 3 variables which relate to
+times: One is the \emph{redshift}, $z$. The \emph{conformal time}
+$\bm{\tau}$, as a function of redshift is given by
+\begin{equ}\label{eq:tau}
+  \bm{\tau}(z\ww )=\frac{1}{\HH_0}\int_z^\infty \kern -0.3 em\d y
+  \frac{1}{\sqrt{ (1+y)^{3(1+w)}\,\Ode+ (1+y)^3\,\Om+(1+y)^4\,\Or}}~.
+\end{equ}
+We use this in the differentiated form
+\begin{equ}\label{eq:tau2}
+  \bm{\tau}'(z\ww )=-\frac{1}{\HH_0}
+  \frac{1}{\sqrt{(1+z)^{3(1+w)}\,\Ode+(1+z)^3\,\Om+(1+z)^4\,\Or}}~.
+\end{equ}
+Note that here, and below, the $'$ always denotes the derivative of
+the function (even if the function is evaluated at a composed argument).
+By definition $\bm\tau (0)=z_{\rm f}$, the (conformal) current time, while we
+consider $\bm\tau(1000)=z_{\rm i}$, the time when the theory begins.
+
+Let now $\bm z$ be the inverse function of $\bm \tau $, this the
+\emph{redshift}:
+\begin{equ}
+  \bm \tau(\bm z (x))=x~.
+\end{equ}
+Then
+\begin{equ}\label{eq:zinverse}
+\bm \tau'(\bm z (x))\cdot \bm z' (x)=1~,
+\end{equ}
+ for all $x$.  
+We now define $\bm a$ by
+\begin{equ}\label{eq:adef}
+  \bm z (x)=\frac{1}{\bm a(x)}-1~.
+\end{equ}
+Therefore, combining \eref{eq:adef} and \eref{eq:zinverse}, we get
+\begin{equa}
+\bm z'(x)&=-\frac{\bm a'(x)}{\bm a(x)^2}~,\\
+\bm z'(x)&=\frac{1}{\bm\tau' (\bm z(x))}= \frac{1}{\bm \tau '(1/\bm a(x)-1)}~.
+\end{equa}
+which is the same as
+\begin{equ}
+  \bm a'(x)=-\frac{\bm a(x)^2}{\bm \tau '(1/\bm a(x)-1)}~.
+\end{equ}
+Substituting into \eref{eq:tau2} we obtain
+the Friedmann equations:
+\begin{equ}\label{eq:aprimea}
+  \bm a'(\tau )=\HH_0 \sqrt{ \atau
+     ^{1-3w}\,\Ode+ \atau\,\Om +\Or}~,
+\end{equ}
+with initial condition $\bm a(\bm{\tau}(0) )=1$.
+The \emph{physical time}, $\bm \HH$, is defined by
+\begin{equ}\label{eq:t}
+  {\bm \HH}(\tau  )=\frac{\bm a'(\tau  )}{\atau}~.
+\end{equ}
+As we will also need a handle on $\bm \HH'$, we write it as
+\begin{equ}\label{eq:hhprime}
+  \bm \HH'(\tau)= \frac{\bm a''(\tau)}{\atau }-{\bm
+    \HH}(\tau)^2~.
+\end{equ}
+From the equation for $\bm a'$ we get
+\JP{check \eref{eq:hprime}}
+\begin{equa}[eq:hprime]
+ \bm \HH'(\tau)=&
+  -\frac{\HH_0^2}{4}\Bigl((4\atau +3w-1)\atau^{-(2+3w)}\Ode\\
+\\&+ ( 4\atau^{-1}-\atau^{-2}) \Om+4\atau^{-3}\Or\Bigr)~.
+\end{equa}
+
+
+%\JP{we have to decide at some point whether what follows is useful.}
+%\JP{for the moment I dont see why we need this}
+%
+%It can also be expressed in terms of $z$, in which case we write
+%\begin{equ}
+%  \hat{\bm \HH}(z )=\frac{\bm a'(\bm\tau (z ) )}{\bm a(\bm\tau (z ) )}~,
+%\end{equ}
+%the $\hat{\ }$ tells us that we view $\bm\HH$ as a function of $z$, not $\tau$.
+%From \eref{eq:t} we have
+%\begin{equ}
+%  \int_u^v \d \tau \,{\bm \HH}(\tau  )=\frac{1}{\bm a(v
+%    )}-\frac{1}{\bm a(u )}
+%\end{equ}
+%and since $\bm a(\bm{\tau}(0) )=1$ we also have
+%\begin{equ}\label{eq:aa}
+%  \int_{\bm{\tau}(0)}^{\bm{\tau}(z )} \d y \, {\bm \HH}(y
+%  )=\frac{1}{\bm a(\bm{\tau}(z ) )}-1~.
+%\end{equ}
+%
+
+\section{The full equations}\label{sec:full}
+\def\mytau{}
+
+Here, we write the equations for the coefficients of the powers of
+$x$. The same equations are found in the Mathematica notebook.
+All functions $u_0, u_1, \dots$ as well as all coefficients $\ell_{x}$
+and $\nu_x$ depend in principle on $\tau$. However, for the model we
+discuss here in detail, some of the coefficients only depend on $c_s^2$
+and on $w$, see \eref{eq:ell} and \eref{eq:nu}.
+
+
+
+
+\JP{if we really keep this, we have to re-align}
+
+
+
+\begin{equa}
+u_0''=-(&\ell_{\Psi }\mytau+\ell_{{\dot \Psi}}\mytau {\psi_{0}}'\mytau+\ell_{{\dot \pi}}\mytau u_0'\mytau+2 u_2\mytau \ell_{{\pi''}}\mytau+\ell_{\pi }\mytau u_0\mytau-2 u_2\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_0'\mytau\\&-u_1\mytau^2 \,\nu_{\pi'^2}\mytau-2 u_0\mytau u_2\mytau \,\nu_{{\pi \pi''}}\mytau-u_1\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_1'\mytau-2 u_2\mytau u_1\mytau^2 \,\nu_{{\pi'^2\pi''}}\mytau-2 {\psi_{0}}\mytau u_2\mytau \,\nu_{{\Psi \pi''}}\mytau-{\psi_{1}}\mytau u_1\mytau \,\nu_{{\Psi' \pi'}}\mytau)~,\\
+u_1''=-(&\ell_{\Psi }\mytau+\ell_{{\dot \Psi}}\mytau {\psi_{1}}'\mytau+\ell_{{\dot \pi}}\mytau u_1'\mytau+6 u_3\mytau \ell_{{\pi''}}\mytau+\ell_{\pi }\mytau u_1\mytau-6 u_3\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_0'\mytau-2 u_2\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_1'\mytau\\&-4 u_2\mytau u_1\mytau \,\nu_{\pi'^2}\mytau-2 u_2\mytau u_1\mytau \,\nu_{{\pi \pi''}}\mytau-6 u_0\mytau u_3\mytau \,\nu_{{\pi \pi''}}\mytau-2 u_1\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_2'\mytau-2 u_2\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_1'\mytau\\&-6 u_3\mytau u_1\mytau^2 \,\nu_{{\pi'^2\pi''}}\mytau-8 u_2\mytau^2 u_1\mytau \,\nu_{{\pi'^2\pi''}}\mytau-6 {\psi_{0}}\mytau u_3\mytau \,\nu_{{\Psi \pi''}}\mytau\\&-2 {\psi_{1}}\mytau u_2\mytau \,\nu_{{\Psi' \pi'}}\mytau-2 {\psi_{1}}\mytau u_2\mytau \,\nu_{{\Psi \pi''}}\mytau-2 {\psi_{2}}\mytau u_1\mytau \,\nu_{{\Psi' \pi'}}\mytau)~,\\
+u_2''=-(&\ell_{\Psi }\mytau+\ell_{{\dot \Psi}}\mytau {\psi_{2}}'\mytau+\ell_{{\dot \pi}}\mytau u_2'\mytau+12 u_4\mytau \ell_{{\pi''}}\mytau+\ell_{\pi }\mytau u_2\mytau-2 u_2\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_2'\mytau-12 u_4\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_0'\mytau-6 u_3\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_1'\mytau\\&-4 u_2\mytau^2 \,\nu_{\pi'^2}\mytau-6 u_1\mytau u_3\mytau \,\nu_{\pi'^2}\mytau-2 u_2\mytau^2 \,\nu_{{\pi \pi''}}\mytau-6 u_1\mytau u_3\mytau \,\nu_{{\pi \pi''}}\mytau-12 u_0\mytau u_4\mytau \,\nu_{{\pi \pi''}}\mytau-4 u_2\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_2'\mytau\\&-3 u_3\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_1'\mytau-3 u_1\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_3'\mytau-8 u_2\mytau^3 \,\nu_{{\pi'^2\pi''}}\mytau-36 u_1\mytau u_3\mytau u_2\mytau \,\nu_{{\pi'^2\pi''}}\mytau-12 u_1\mytau^2 u_4\mytau \,\nu_{{\pi'^2\pi''}}\mytau\\&-12 {\psi_{0}}\mytau u_4\mytau \,\nu_{{\Psi \pi''}}\mytau-3 {\psi_{1}}\mytau u_3\mytau \,\nu_{{\Psi' \pi'}}\mytau-6 {\psi_{1}}\mytau u_3\mytau \,\nu_{{\Psi \pi''}}\mytau-4 {\psi_{2}}\mytau u_2\mytau \,\nu_{{\Psi' \pi'}}\mytau\\&-2 {\psi_{2}}\mytau u_2\mytau \,\nu_{{\Psi \pi''}}\mytau-3 {\psi_{3}}\mytau u_1\mytau \,\nu_{{\Psi' \pi'}}\mytau)~,\\
+u_3''=-(&\ell_{\Psi }\mytau+\ell_{{\dot \Psi}}\mytau {\psi_{3}}'\mytau+\ell_{{\dot \pi}}\mytau u_3'\mytau+\ell_{\pi }\mytau u_3\mytau-2 u_2\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_3'\mytau-12 u_4\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_1'\mytau\\&-6 u_3\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_2'\mytau-12 u_3\mytau u_2\mytau \,\nu_{\pi'^2}\mytau-8 u_1\mytau u_4\mytau \,\nu_{\pi'^2}\mytau-8 u_3\mytau u_2\mytau \,\nu_{{\pi \pi''}}\mytau-12 u_1\mytau u_4\mytau \,\nu_{{\pi \pi''}}\mytau-6 u_2\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_3'\mytau\\&-4 u_4\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_1'\mytau-6 u_3\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_2'\mytau-4 u_1\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_4'\mytau-48 u_3\mytau u_2\mytau^2 \,\nu_{{\pi'^2\pi''}}\mytau\\&-64 u_1\mytau u_4\mytau u_2\mytau \,\nu_{{\pi'^2\pi''}}\mytau-36 u_1\mytau u_3\mytau^2 \,\nu_{{\pi'^2\pi''}}\mytau-4 {\psi_{1}}\mytau u_4\mytau \,\nu_{{\Psi' \pi'}}\mytau\\&-12 {\psi_{1}}\mytau u_4\mytau \,\nu_{{\Psi \pi''}}\mytau-6 {\psi_{2}}\mytau u_3\mytau \,\nu_{{\Psi' \pi'}}\mytau-6 {\psi_{2}}\mytau u_3\mytau \,\nu_{{\Psi \pi''}}\mytau-6 {\psi_{3}}\mytau u_2\mytau \,\nu_{{\Psi' \pi'}}\mytau\\&-2 {\psi_{3}}\mytau u_2\mytau \,\nu_{{\Psi \pi''}}\mytau-4 {\psi_{4}}\mytau u_1\mytau \,\nu_{{\Psi' \pi'}}\mytau+u_3)~,\\
+u_4''=-(&\ell_{\Psi }\mytau+\ell_{{\dot \Psi}}\mytau {\psi_{4}}'\mytau+\ell_{{\dot \pi}}\mytau u_4'\mytau+\ell_{\pi }\mytau u_4\mytau-2 u_2\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_4'\mytau-12 u_4\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_2'\mytau-6 u_3\mytau \,\nu_{{\dot \pi\pi''}}\mytau u_3'\mytau\\&-16 u_4\mytau u_2\mytau \,\nu_{\pi'^2}\mytau-9 u_3\mytau^2 \,\nu_{\pi'^2}\mytau-14 u_4\mytau u_2\mytau \,\nu_{{\pi \pi''}}\mytau-6 u_3\mytau^2 \,\nu_{{\pi \pi''}}\mytau-8 u_2\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_4'\mytau-8 u_4\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_2'\mytau\\&-9 u_3\mytau \,\nu_{{\pi'\dot\pi'}}\mytau u_3'\mytau-80 u_4\mytau u_2\mytau^2 \,\nu_{{\pi'^2\pi''}}\mytau-90 u_3\mytau^2 u_2\mytau \,\nu_{{\pi'^2\pi''}}\mytau\\&-120 u_1\mytau u_3\mytau u_4\mytau \,\nu_{{\pi'^2\pi''}}\mytau-8 {\psi_{2}}\mytau u_4\mytau \,\nu_{{\Psi' \pi'}}\mytau-12 {\psi_{2}}\mytau u_4\mytau \,\nu_{{\Psi \pi''}}\mytau-9 {\psi_{3}}\mytau u_3\mytau \,\nu_{{\Psi' \pi'}}\mytau\\&-6 {\psi_{3}}\mytau u_3\mytau \,\nu_{{\Psi \pi''}}\mytau-8 {\psi_{4}}\mytau u_2\mytau \,\nu_{{\Psi' \pi'}}\mytau-2 {\psi_{4}}\mytau u_2\mytau \,\nu_{{\Psi \pi''}}\mytau)~.
+\end{equa}
+
+
+\JP{here, and in my programs, we should add the equations for $\Psi$}
+
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+%\cite{Hassani:2019lmy}
+\bibitem{Hassani:2019lmy}
+F.~Hassani, J.~Adamek, M.~Kunz and F.~Vernizzi,
+%``$k$-evolution: a relativistic N-body code for clustering dark energy,''
+JCAP \textbf{12} (2019), 011
+doi:10.1088/1475-7516/2019/12/011
+[arXiv:1910.01104 [astro-ph.CO]].
+%8 citations counted in INSPIRE as of 06 Jan 2021
+
+%\cite{Bernardeau:2001qr}
+\bibitem{Bernardeau:2001qr}
+F.~Bernardeau, S.~Colombi, E.~Gaztanaga and R.~Scoccimarro,
+%``Large scale structure of the universe and cosmological perturbation theory,''
+Phys. Rept. \textbf{367} (2002), 1-248
+doi:10.1016/S0370-1573(02)00135-7
+[arXiv:astro-ph/0112551 [astro-ph]].
+%1179 citations counted in INSPIRE as of 17 Jan 2021
+
+\end{thebibliography}
+
+\end{document}

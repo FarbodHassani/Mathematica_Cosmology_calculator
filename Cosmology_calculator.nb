@@ -16337,7 +16337,7 @@ rzAcfwOPHxGI\
 },
 WindowToolbars->"EditBar",
 WindowSize->{1455, 783},
-WindowMargins->{{229, Automatic}, {80, Automatic}},
+WindowMargins->{{129, Automatic}, {75, Automatic}},
 PrintingCopies->1,
 PrintingPageRange->{1, Automatic},
 FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
