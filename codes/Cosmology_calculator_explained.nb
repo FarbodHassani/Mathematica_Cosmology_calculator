@@ -18006,7 +18006,7 @@ Cell[BoxData[
 },
 WindowToolbars->"EditBar",
 WindowSize->{1455, 783},
-WindowMargins->{{Automatic, 100}, {81, Automatic}},
+WindowMargins->{{209, Automatic}, {41, Automatic}},
 PrintingCopies->1,
 PrintingPageRange->{1, Automatic},
 FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
